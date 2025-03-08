@@ -1,6 +1,6 @@
 <?php
 $host = "localhost";
-$user = "root";  // Change if necessary
+$user = "root"; 
 $password = "";
 $dbname = "medical_id_system";
 
