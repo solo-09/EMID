@@ -1,28 +1,26 @@
 <?php
-// Database Configuration
 $host = "localhost";
-$user = "root"; // Default XAMPP user
-$password = ""; // Default XAMPP password is empty
-$database = "medical_id_system"; // Ensure this database exists in MySQL
+$user = "root"; 
+$password = ""; 
+$database = "medical_id_system"; 
 
-// Connect to MySQL
+
 $conn = new mysqli($host, $user, $password, $database);
 
-// Check Connection
+
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// Handle Form Submission
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = $conn->real_escape_string($_POST['name']);
     $email = $conn->real_escape_string($_POST['email']);
     $address = $conn->real_escape_string($_POST['address']);
     $medications = $conn->real_escape_string($_POST['medications']);
     $conditions = $conn->real_escape_string($_POST['conditions']);
-    $medicalId = $conn->real_escape_string($_POST['medical_id']); // Capture generated ID
-    
-    // Insert into Database
+    $medicalId = $conn->real_escape_string($_POST['medical_id']); 
+
     $sql = "INSERT INTO users (name, email, address, medications, conditions, medical_id) 
             VALUES ('$name', '$email', '$address', '$medications', '$conditions', '$medicalId')";
 
