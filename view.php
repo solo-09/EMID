@@ -1,6 +1,5 @@
 <?php
-require 'database.php'; // Include the database connection file
-
+require 'database.php';
 $medicalInfo = null;
 $error = '';
 
